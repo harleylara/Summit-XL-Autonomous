@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="wait_for_datum" default="false" /> 
+
+    <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node" respawn="true">
+
+        <param name="magnetic_declination_radians" value="0.04066617"/> <!-- Magnetic declination for Kamp-Lintfort-->>
+
+        <param name="yaw_offset" value="-1.0471975512"/> <!-- if the imu absolute orientation is 0 when facing north, this value MUST BE PI/2 1.5707963268 0.7853981634 -->
+
+        <param name="use_odometry_yaw" value="false" />
+        <param name="wait_for_datum" value="$(arg wait_for_datum)" />
+        <param name="zero_altitude" value="true" />
+
+        <param name="broadcast_utm_transform" value="true"/>
+        <param name="publish_filtered_gps" value="true" />
+
+        <remap from="/odometry/filtered" to="/odometry/filtered_world" /> <!-- /odometry/filtered_odom -->
+        <remap from="/imu/data" to="/robot/imu/data"/>
+        <remap from="/gps/fix" to="/robot/gps/fix" />
+       	    
+    </node>
+    
+</launch>

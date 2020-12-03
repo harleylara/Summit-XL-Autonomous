@@ -1,0 +1,13 @@
+# Request
+float32 olat
+float32 olon
+float32 lat
+float32 lon
+---
+# Response
+float32 xg
+float32 yg
+float32 xa
+float32 ya
+float32 utmx
+float32 utmy

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!--- Reset Odometry -->
+    <node pkg="summit_xl_gps" type="reset_odometry.py" name="reset_odometry" output="screen" />
+
+</launch>

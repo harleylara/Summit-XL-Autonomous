@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- launch Reset Odometry -->
+    <include file="$(find summit_xl_gps)/launch/reset_odometry.launch" output="screen"/>
+
+    <!-- launch map server -->
+    <include file="$(find summit_xl_gps)/launch/map_server.launch" />
+
+    <!-- Launch Move Base -->
+    <include file="$(find summit_xl_gps)/launch/move_base.launch" />
+
+    <!-- Launch coordinate_converter Server-->
+    <node pkg="summit_xl_gps" type="coordinate_converter.py" name="coordinate_converter" output="screen"/>
+    
+    <!-- Launch Robot Localization -->
+    <include file="$(find summit_xl_gps)/launch/robot_full.launch" />
+
+</launch>

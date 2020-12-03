@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!--- Launch converter - Depth image to laser scan -->
+    <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan" >
+        
+        <param name="scan_height" value="3"/> <!-- in pixels-->
+        <param name="range_min" value="0.45"/> <!-- in meters-->
+        <param name="range_max" value="10.0"/> <!-- in meters-->
+        <param name="output_frame_id" value="/robot_base_link"/>
+
+        <remap from="/image" to="/robot/front_rgbd_camera/depth/image_rect" />
+        <remap from="/scan" to="/robot/depthimage_to_laserscan" />
+    </node>
+
+</launch>
