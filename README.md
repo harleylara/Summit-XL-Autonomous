@@ -41,7 +41,7 @@ The above command executes the following:
 
 To send the GPS destination point make sure that the gps receiver is working in RTK mode, this can be seen by looking at the covariance matrix in the gps topic `rostopic echo /robot/gps/fix`, must show covariances less than 0.002 equivalent to a precision of approximately 4 cm.
 
-Open the file `gps_mission.py` in `summit_xl_gps/scripts`, set the origin point set de origin point (must be the gps cordinate where the odometry started) in the varible `olat` and `olot`.
+Open the file `gps_mission.py` in `summit_xl_gps/scripts`, set the origin point (must be the gps cordinate where the odometry started) in the varible `olat` and `olot`.
 
 For the conversion of latitude to longitude to work you must install the package [geonav_transform](http://wiki.ros.org/geonav_transform)
 
